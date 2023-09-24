@@ -20,7 +20,7 @@ class Map:
         self.gen_map()
 
     def gen_map(self):
-        random.seed() # Sorry David & co.!
+        random.seed()
         cts = [1, 3, 5, 7, 9, 11, 13]
         cts = [ct for ct in cts]
         cts = random.choices(cts, k=3)
@@ -174,13 +174,8 @@ class Engine:
                 gui.play_sound('gameover')
             gui.update_screen(state, game_over=True)
         
-        #if status == GameStatus.TIMEOUT:
-        #    print("*** max turns reached")
-        
         max_tops = max([bot.category_tops for bot in state.bots])
         winners = [bot.name for bot in self.map.bots if bot.category_tops == max_tops]
-        #if len(winners) > 1:
-        #    winners = []
         return winners, timings, state.turn
 
 def main(players, map_size, max_turns, obj_proportion, check_timing, gui):
