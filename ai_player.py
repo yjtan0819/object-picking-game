@@ -5,8 +5,8 @@ from consts import *
 class Player(GamePlayer):
 
     def __init__(self):
-        self.name = "ZerotoBananatoKitKat"
-        self.group = "1D"
+        self.name = "Player"
+        self.group = "n/a"
 
     def step(self, game_map, turn, cur_pos):
 
